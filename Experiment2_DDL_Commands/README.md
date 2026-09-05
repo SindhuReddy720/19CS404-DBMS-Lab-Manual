@@ -104,124 +104,218 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+Write a SQL query to add birth_date attribute as timestamp (datatype) in the table customer 
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id 
+ 
+-------------+----------------+------------+-------+-------------
+
+ 3002 | Nick Rimando   | New York   |   100 |        5001    
+ 3007 | Brad Davis     | New York   |   200 |        5001  
+ 3005 | Graham Zusi    | California |   200 |        5002
+
 
 ```sql
--- Paste your SQL code below for Question 1
+ALTER TABLE customer
+ADD birth_date timestamp;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1225" height="448" alt="image" src="https://github.com/user-attachments/assets/afe3ca14-440f-4c1b-a99d-63959a12b2a0" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+
+Create a table named Orders with the following constraints:
+
+OrderID as INTEGER should be the primary key.  
+OrderDate as DATE should be not NULL.  
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- Paste your SQL code below for Question 2
+CREATE TABLE Orders(
+OrderID INTEGER PRIMARY KEY,
+OrderDate DATE NOT NULL,
+CustomerID INTEGER,
+FOREIGN KEY(CustomerID) REFERENCES Customers(CustomerID)
+);
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1222" height="365" alt="image" src="https://github.com/user-attachments/assets/39c93426-333a-40a4-8d05-41224f3ddb1e" />
+
 
 **Question 3**
----
--- Paste Question 3 here
+
+Create a table named Orders with the following columns:
+
+OrderID as INTEGER<br>
+OrderDate as TEXT<br>
+CustomerID as INTEGER
 
 ```sql
--- Paste your SQL code below for Question 3
+CREATE TABLE Orders(
+OrderID INTEGER,
+OrderDate TEXT,
+CustomerID INTEGER
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1216" height="445" alt="image" src="https://github.com/user-attachments/assets/4cbbfec6-7147-4d78-8bff-34643049c65d" />
+
 
 **Question 4**
----
--- Paste Question 4 here
+
+Create a table named Tasks with the following columns:
+
+TaskID as INTEGER<br>
+TaskName as TEXT<br>
+DueDate as DATE
 
 ```sql
--- Paste your SQL code below for Question 4
+CREATE TABLE Tasks(
+TaskID INTEGER,
+TaskName TEXT,
+DueDate DATE
+);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1222" height="457" alt="image" src="https://github.com/user-attachments/assets/e9188a23-fd46-4d07-ba9f-c14297edc915" />
 
 **Question 5**
----
--- Paste Question 5 here
+
+Insert the following customers into the Customers table:
+
+CustomerID  Name         Address     City        ZipCode <br>
+----------  -----------  ----------  ----------  ---------- <br>
+302         Laura Croft  456 Elm St  Seattle     98101 <br>
+303         Bruce Wayne  789 Oak St  Gotham      10001 <br>
 
 ```sql
--- Paste your SQL code below for Question 5
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode)
+VALUES(302,"Laura Croft","456 Elm St","Seattle",98101);
+
+INSERT INTO Customers(CustomerID,Name,Address,City,ZipCode)
+VALUES(303,"Bruce Wayne","789 Oak St","Gotham",10001);
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1227" height="461" alt="image" src="https://github.com/user-attachments/assets/aa4783ba-666b-445c-a598-aed5fcda13ab" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+
+Create a table named Products with the following constraints:
+
+ProductID should be the primary key.<br>
+ProductName should be NOT NULL.<br>
+Price is of real datatype and should be greater than 0.<br>
+Stock is of integer datatype and should be greater than or equal to 0.
 
 ```sql
--- Paste your SQL code below for Question 6
+CREATE TABLE Products(
+ProductID INTEGER PRIMARY KEY,
+ProductName TEXT NOT NULL,
+Price REAL CHECK(Price>0),
+Stock INTEGER CHECK(Stock>=0)
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1223" height="357" alt="image" src="https://github.com/user-attachments/assets/d23253d8-5a67-4a00-b83d-02e9e6008066" />
+
 
 **Question 7**
----
--- Paste Question 7 here
+
+Create a table named Shipments with the following constraints:
+
+ShipmentID as INTEGER should be the primary key.<br>
+ShipmentDate as DATE.<br>
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).<br>
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
 ```sql
--- Paste your SQL code below for Question 7
+CREATE TABLE Shipments(
+ShipmentID INTEGER PRIMARY KEY,
+ShipmentDate DATE,
+SupplierID INTEGER,
+OrderID INTEGER,
+FOREIGN KEY(SupplierID) REFERENCES Suppliers(SupplierID),
+FOREIGN KEY(OrderID) REFERENCES Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1217" height="321" alt="image" src="https://github.com/user-attachments/assets/bf701504-9bc9-4da4-89f2-7715bee40257" />
+
 
 **Question 8**
----
--- Paste Question 8 here
+
+Insert the below data into the Books table, allowing the Publisher and Year columns to take their default values.
+
+ISBN             Title                 Author <br>
+---------------  --------------------  --------------- <br>
+978-6655443321   Big Data Analytics    Karen Adams <br>
+
+Note: The Publisher and Year columns will use their default values.
 
 ```sql
--- Paste your SQL code below for Question 8
+INSERT INTO Books(ISBN,Title,Author)
+VALUES("978-6655443321","Big Data Analytics","Karen Adams");
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1208" height="407" alt="image" src="https://github.com/user-attachments/assets/02ce97dd-70d6-479d-981d-57015b0354ef" />
+
 
 **Question 9**
----
--- Paste Question 9 here
+
+Write a SQL query to Add a new column named "discount" with the data type DECIMAL(5,2) to the "customer" table.
+
+Sample table: customer
+
+ customer_id |   cust_name    |    city    | grade | salesman_id <br>
+-------------+----------------+------------+-------+------------- <br>
+        3002 | Nick Rimando   | New York   |   100 |        5001 <br>
+        3007 | Brad Davis     | New York   |   200 |        5001 <br>
+        3005 | Graham Zusi    | California |   200 |        5002
 
 ```sql
--- Paste your SQL code below for Question 9
+ALTER TABLE customer
+ADD COLUMN discount DECIMAL(5,2);
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1210" height="443" alt="image" src="https://github.com/user-attachments/assets/73d88cdf-1f4b-4897-bc4b-93d46699111e" />
+
 
 **Question 10**
----
--- Paste Question 10 here
+
+Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
 
 ```sql
--- Paste your SQL code below for Question 10
+INSERT INTO Products(ProductID,Name,Category,Price,Stock)
+VALUES(101,"Laptop","Electronics",1500,50);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1227" height="325" alt="image" src="https://github.com/user-attachments/assets/b05bcf58-984b-4cf1-aba6-21779e77ce00" />
+
 
 
 ## RESULT
