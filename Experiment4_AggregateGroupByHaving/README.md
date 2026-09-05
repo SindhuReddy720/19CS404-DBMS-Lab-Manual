@@ -37,125 +37,211 @@ HAVING condition;
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+
+Write a SQL query to  find the average salary of all employees?
+
+Table: employee <br>
+
+name        type <br>
+----------  ---------- <br>
+id          INTEGER <br>
+name        TEXT <br>
+age         INTEGER <br>
+city        TEXT <br>
+income      INTEGER <br>
 
 ```sql
--- Paste your SQL code below for Question 1
+select AVG(income) as Average_Salary
+from employee;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="507" height="390" alt="image" src="https://github.com/user-attachments/assets/0a93304b-8a87-4baf-bb95-064bc415d3ec" />
+
 
 **Question 2**
----
--- Paste Question 2 here
+
+Write a SQL query to find the customer with longest name?
+
+Table: customer
+
+name        type <br>
+----------  ---------- <br>
+id          INTEGER <br>
+name        TEXT <br>
+city        TEXT <br>
+email       TEXT <br>
+phone       INTEGER <br>
 
 ```sql
--- Paste your SQL code below for Question 2
+select name,MAX(length(name)) as length
+from customer;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="663" height="390" alt="image" src="https://github.com/user-attachments/assets/2e1e5981-1dd6-41fc-981b-bf313e68feeb" />
 
 **Question 3**
----
--- Paste Question 3 here
+
+Write a SQL query to find the total number of unique cities in the customer table?
+
+Table: customer
+
+name        type <br>
+----------  ---------- <br>
+id          INTEGER <br>
+name        TEXT <br>
+city        TEXT <br>
+email       TEXT <br>
+phone       INTEGER <br>
 
 ```sql
--- Paste your SQL code below for Question 3
+select count(distinct city) as unique_cities
+from customer;
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="467" height="397" alt="image" src="https://github.com/user-attachments/assets/57cf53e6-2195-47f7-bbe5-5f2aab6a574a" />
+
 
 **Question 4**
----
--- Paste Question 4 here
+
+What is the count of male and female patients?
+
+Sample table: Patients Table
+
+<img width="1076" height="161" alt="image (3)" src="https://github.com/user-attachments/assets/e513d4e9-f07e-4f26-958e-84c18020cb51" />
 
 ```sql
--- Paste your SQL code below for Question 4
+select Gender,count(*) as TotalPatients
+from Patients
+group by Gender;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="630" height="427" alt="image" src="https://github.com/user-attachments/assets/162a5349-6a7b-41f1-8126-ff88822238ec" />
 
 **Question 5**
----
--- Paste Question 5 here
+
+How many prescriptions were written for each medication?
+
+Sample tablePrescriptions Table
+
+<img width="1082" height="154" alt="image (8)" src="https://github.com/user-attachments/assets/f4fea56d-577a-4b87-9a33-74f8a772a5d0" />
 
 ```sql
--- Paste your SQL code below for Question 5
+select Medication,count(*) as TotalPrescriptions
+from Prescriptions
+group by Medication;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="767" height="827" alt="image" src="https://github.com/user-attachments/assets/731068e5-47a1-45e7-b3a9-f986f6249604" />
+
 
 **Question 6**
----
--- Paste Question 6 here
+
+Write the SQL query that accomplishes the grouping of data by age, calculates the maximum income for each age group, and includes only those age groups where the maximum income is greater than 2,000,000.
+
+Sample table: employee
+
+<img width="1011" height="215" alt="unnamed" src="https://github.com/user-attachments/assets/ec528ac5-b136-4edb-a919-7069c9504da2" />
 
 ```sql
--- Paste your SQL code below for Question 6
+select age,MAX(income)
+from employee
+group by age
+having MAX(income)>2000000;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="607" height="437" alt="image" src="https://github.com/user-attachments/assets/0956e07b-181a-4a5d-91f9-ea1acbf21acb" />
+
 
 **Question 7**
----
--- Paste Question 7 here
+
+Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates the minimum work hours for each date, and excludes dates where the minimum work hour is not less than 10.
+
+Sample table: employee1
+
+<img width="1031" height="203" alt="unnamed" src="https://github.com/user-attachments/assets/37506e16-5f0c-4b5a-a6d8-7ef6a00ffb52" />
+
 
 ```sql
--- Paste your SQL code below for Question 7
+select jdate,MIN(workhour)
+from employee1
+group by jdate
+having MIN(workhour)<10;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="632" height="512" alt="image" src="https://github.com/user-attachments/assets/71386be3-6484-4d35-b6c6-081b4ff6af22" />
 
 **Question 8**
----
--- Paste Question 8 here
+
+Write the SQL query that accomplishes the selection of product which has lowest price in each category from the "products" table and includes only those products where the minimum price is less than 10.
+
+Sample table: products
+
+<img width="972" height="212" alt="unnamed" src="https://github.com/user-attachments/assets/60a54e4b-3707-4515-a153-9a347370420c" />
 
 ```sql
--- Paste your SQL code below for Question 8
+select category_id,MIN(price) as Price
+from products
+group by category_id
+having MIN(price)<10;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="628" height="442" alt="image" src="https://github.com/user-attachments/assets/2193b855-bba9-4c19-9a03-9f8046e21630" />
+
 
 **Question 9**
----
--- Paste Question 9 here
+
+Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates the total work hours for each date, and excludes dates where the total work hour sum is not greater than 40.
+
+Sample table: employee1
+
+<img width="1031" height="203" alt="unnamed" src="https://github.com/user-attachments/assets/c1a614be-fa07-4d16-a54e-f457931ab7d2" />
 
 ```sql
--- Paste your SQL code below for Question 9
+select jdate,SUM(workhour)
+from employee1
+group by jdate
+having SUM(workhour)>40;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="656" height="455" alt="image" src="https://github.com/user-attachments/assets/0e97f44e-58b0-4218-8ae5-146196c3e320" />
+
 
 **Question 10**
----
--- Paste Question 10 here
+
+Write a SQL query to return the total number of rows in the 'customer' table where the city is Noida.
+
+Sample table: customer
+
+<img width="668" height="138" alt="image (3)" src="https://github.com/user-attachments/assets/0e4f38ec-a9b2-4d6f-9803-b292757ee671" />
+
 
 ```sql
--- Paste your SQL code below for Question 10
+select count(city) as COUNT
+from customer
+where city="Noida";
 ```
 
 **Output:**
 
-![Output10](output.png)
-
+<img width="456" height="380" alt="image" src="https://github.com/user-attachments/assets/73df409b-b071-499a-86a9-984e7b22ebbc" />
 
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
