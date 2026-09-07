@@ -243,5 +243,9 @@ where city="Noida";
 
 <img width="456" height="380" alt="image" src="https://github.com/user-attachments/assets/73df409b-b071-499a-86a9-984e7b22ebbc" />
 
+**SEB result**
+
+<img width="992" height="102" alt="image" src="https://github.com/user-attachments/assets/ce84a93d-5a67-40d0-b87f-7a1b90869f77" />
+
 ## RESULT
 Thus, the SQL queries to implement aggregate functions, GROUP BY, and HAVING clause have been executed successfully.
