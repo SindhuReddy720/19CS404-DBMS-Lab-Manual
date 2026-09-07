@@ -316,7 +316,9 @@ VALUES(101,"Laptop","Electronics",1500,50);
 
 <img width="1227" height="325" alt="image" src="https://github.com/user-attachments/assets/b05bcf58-984b-4cf1-aba6-21779e77ce00" />
 
+**SEB Result**
 
+<img width="967" height="78" alt="image" src="https://github.com/user-attachments/assets/6869662d-4114-4d5b-b60a-18c007221c9c" />
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
