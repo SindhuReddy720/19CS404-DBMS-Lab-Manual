@@ -286,6 +286,9 @@ where specialization = "Cardiology";
 
 <img width="1188" height="412" alt="image" src="https://github.com/user-attachments/assets/90fa544a-020d-4406-bb71-5ed50295776e" />
 
+**SEB Result**
+
+<img width="955" height="77" alt="image" src="https://github.com/user-attachments/assets/9373caba-f89c-4c95-a81f-e3275f33ca9d" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
